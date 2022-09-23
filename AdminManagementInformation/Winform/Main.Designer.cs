@@ -40,7 +40,6 @@
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.panel2.SuspendLayout();
@@ -207,13 +206,6 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // sqlCommand1
-            // 
-            this.sqlCommand1.CommandTimeout = 30;
-            this.sqlCommand1.Connection = null;
-            this.sqlCommand1.Notification = null;
-            this.sqlCommand1.Transaction = null;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -245,7 +237,6 @@
         private System.Windows.Forms.DataGridView dgvData;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
         private System.Windows.Forms.Button btnLoadFeedback;
         private System.Windows.Forms.Button btnLoadQuestion;
         private System.Windows.Forms.Label label2;
