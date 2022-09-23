@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\OJT_Project\\AdminManagementInformation\\Winform\\Winform.csproj": {}
+    "D:\\OJT_Project\\Administrator_Management_App\\AdminManagementInformation\\Winform\\Winform.csproj": {}
   },
   "projects": {
-    "D:\\OJT_Project\\AdminManagementInformation\\BusinessTier\\Library.csproj": {
+    "D:\\OJT_Project\\Administrator_Management_App\\AdminManagementInformation\\BusinessTier\\Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\OJT_Project\\AdminManagementInformation\\BusinessTier\\Library.csproj",
+        "projectUniqueName": "D:\\OJT_Project\\Administrator_Management_App\\AdminManagementInformation\\BusinessTier\\Library.csproj",
         "projectName": "Library",
-        "projectPath": "D:\\OJT_Project\\AdminManagementInformation\\BusinessTier\\Library.csproj",
+        "projectPath": "D:\\OJT_Project\\Administrator_Management_App\\AdminManagementInformation\\BusinessTier\\Library.csproj",
         "packagesPath": "C:\\Users\\Hai Trieu\\.nuget\\packages\\",
-        "outputPath": "D:\\OJT_Project\\AdminManagementInformation\\BusinessTier\\obj\\",
+        "outputPath": "D:\\OJT_Project\\Administrator_Management_App\\AdminManagementInformation\\BusinessTier\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -93,14 +93,14 @@
         }
       }
     },
-    "D:\\OJT_Project\\AdminManagementInformation\\Winform\\Winform.csproj": {
+    "D:\\OJT_Project\\Administrator_Management_App\\AdminManagementInformation\\Winform\\Winform.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\OJT_Project\\AdminManagementInformation\\Winform\\Winform.csproj",
+        "projectUniqueName": "D:\\OJT_Project\\Administrator_Management_App\\AdminManagementInformation\\Winform\\Winform.csproj",
         "projectName": "Winform",
-        "projectPath": "D:\\OJT_Project\\AdminManagementInformation\\Winform\\Winform.csproj",
+        "projectPath": "D:\\OJT_Project\\Administrator_Management_App\\AdminManagementInformation\\Winform\\Winform.csproj",
         "packagesPath": "C:\\Users\\Hai Trieu\\.nuget\\packages\\",
-        "outputPath": "D:\\OJT_Project\\AdminManagementInformation\\Winform\\obj\\",
+        "outputPath": "D:\\OJT_Project\\Administrator_Management_App\\AdminManagementInformation\\Winform\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -121,8 +121,8 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "D:\\OJT_Project\\AdminManagementInformation\\BusinessTier\\Library.csproj": {
-                "projectPath": "D:\\OJT_Project\\AdminManagementInformation\\BusinessTier\\Library.csproj"
+              "D:\\OJT_Project\\Administrator_Management_App\\AdminManagementInformation\\BusinessTier\\Library.csproj": {
+                "projectPath": "D:\\OJT_Project\\Administrator_Management_App\\AdminManagementInformation\\BusinessTier\\Library.csproj"
               }
             }
           }
