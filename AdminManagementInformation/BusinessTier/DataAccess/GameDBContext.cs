@@ -6,15 +6,22 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Library.DataAccess
 {
-    public partial class GameWebsiteDbContext : DbContext
+    public partial class GameDBContext : DbContext
     {
-        public GameWebsiteDbContext()
+        public GameDBContext()
         {
         }
 
-        public GameWebsiteDbContext(DbContextOptions<GameWebsiteDbContext> options)
+        public GameDBContext(DbContextOptions<GameDBContext> options)
             : base(options)
         {
+        }
+
+        public string ConnectionString;
+
+        public GameDBContext(string cs)
+        {
+            ConnectionString = cs;
         }
 
         public virtual DbSet<Account> Accounts { get; set; }
@@ -23,12 +30,6 @@ namespace Library.DataAccess
         public virtual DbSet<Feedback> Feedbacks { get; set; }
         public virtual DbSet<Lesson> Lessons { get; set; }
         public virtual DbSet<Question> Questions { get; set; }
-
-        public string ConnectionString;
-        public GameWebsiteDbContext(string cs)
-        {
-            ConnectionString = cs;
-        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -44,93 +45,99 @@ namespace Library.DataAccess
 
             modelBuilder.Entity<Account>(entity =>
             {
-                entity.HasKey(e => e.IdAccount)
-                    .HasName("PK__Account__B7B00CE38DFFBE95");
+                entity.HasKey(e => e.IdAccount);
 
                 entity.ToTable("Account");
 
-                entity.Property(e => e.NameAccount).HasMaxLength(100);
+                entity.Property(e => e.NameAccount)
+                    .IsRequired()
+                    .HasMaxLength(100);
 
-                entity.Property(e => e.Password).HasMaxLength(100);
+                entity.Property(e => e.Password)
+                    .IsRequired()
+                    .HasMaxLength(100);
 
-                entity.Property(e => e.Username).HasMaxLength(100);
+                entity.Property(e => e.Username)
+                    .IsRequired()
+                    .HasMaxLength(100);
             });
 
             modelBuilder.Entity<Category>(entity =>
             {
-                entity.HasKey(e => e.IdCategory)
-                    .HasName("PK__Category__CBD74706A126B435");
+                entity.HasKey(e => e.IdCategory);
 
                 entity.ToTable("Category");
 
-                entity.Property(e => e.NameCategory).HasMaxLength(20);
+                entity.Property(e => e.NameCategory)
+                    .IsRequired()
+                    .HasMaxLength(20);
             });
 
             modelBuilder.Entity<Description>(entity =>
             {
-                entity.HasKey(e => e.IdDescription)
-                    .HasName("PK__Descript__D1FF265D9735C765");
+                entity.HasKey(e => e.IdDescription);
 
                 entity.ToTable("Description");
 
                 entity.Property(e => e.Description1)
+                    .IsRequired()
                     .HasMaxLength(500)
                     .HasColumnName("Description");
 
-                entity.Property(e => e.Time).HasMaxLength(20);
-
-                entity.HasOne(d => d.IdLessonNavigation)
-                    .WithMany(p => p.Descriptions)
-                    .HasForeignKey(d => d.IdLesson)
-                    .HasConstraintName("FK__Descripti__IdLes__412EB0B6");
+                entity.Property(e => e.Time)
+                    .IsRequired()
+                    .HasMaxLength(20);
             });
 
             modelBuilder.Entity<Feedback>(entity =>
             {
                 entity.HasKey(e => e.IdFeedback)
-                    .HasName("PK__Feedback__408FF1033F5E4F7C");
+                    .HasName("PK__Feedback__408FF103271A4C94");
 
                 entity.ToTable("Feedback");
+
+                entity.Property(e => e.CreateDate).HasColumnType("datetime");
+
+                entity.Property(e => e.IsRead).HasDefaultValueSql("((0))");
 
                 entity.Property(e => e.LessonFeedback).HasMaxLength(500);
 
                 entity.Property(e => e.PhoneNumber).HasMaxLength(15);
-
-                entity.HasOne(d => d.IdLessonNavigation)
-                    .WithMany(p => p.Feedbacks)
-                    .HasForeignKey(d => d.IdLesson)
-                    .HasConstraintName("FK__Feedback__IdLess__440B1D61");
             });
 
             modelBuilder.Entity<Lesson>(entity =>
             {
-                entity.HasKey(e => e.IdLesson)
-                    .HasName("PK__Lesson__2253D85AC96AF018");
+                entity.HasKey(e => e.IdLesson);
 
                 entity.ToTable("Lesson");
 
-                entity.Property(e => e.NameLesson).HasMaxLength(100);
+                entity.Property(e => e.NameLesson)
+                    .IsRequired()
+                    .HasMaxLength(100);
 
-                entity.Property(e => e.VideoUrl).HasMaxLength(300);
-
-                entity.HasOne(d => d.IdCategoryNavigation)
-                    .WithMany(p => p.Lessons)
-                    .HasForeignKey(d => d.IdCategory)
-                    .HasConstraintName("FK__Lesson__IdCatego__36B12243");
+                entity.Property(e => e.VideoUrl)
+                    .IsRequired()
+                    .HasMaxLength(300);
             });
 
             modelBuilder.Entity<Question>(entity =>
             {
-                entity.HasKey(e => e.IdQuestion)
-                    .HasName("PK__Question__FB3BDD3021633DAD");
+                entity.HasKey(e => e.IdQuestion);
 
                 entity.ToTable("Question");
 
-                entity.Property(e => e.Email).HasMaxLength(100);
+                entity.Property(e => e.CreateDate).HasColumnType("datetime");
 
-                entity.Property(e => e.PhoneNumber).HasMaxLength(15);
+                entity.Property(e => e.Email)
+                    .IsRequired()
+                    .HasMaxLength(100);
+
+                entity.Property(e => e.PhoneNumber)
+                    .IsRequired()
+                    .HasMaxLength(15);
 
                 entity.Property(e => e.Question1)
+                    .IsRequired()
                     .HasMaxLength(500)
                     .HasColumnName("Question");
             });

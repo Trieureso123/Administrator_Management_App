@@ -22,7 +22,7 @@ namespace Winform
 
             var builder = new ConfigurationBuilder().AddJsonFile("appsetting.json", optional: true, reloadOnChange: true);
             IConfigurationRoot configuration = builder.Build();
-            ConnectionString = configuration.GetSection("ConnectionStrings").GetSection("GameWebsiteDb").Value;
+            ConnectionString = configuration.GetSection("ConnectionStrings").GetSection("GameDB").Value;
 
             Application.Run(new Login_modifier());
         }

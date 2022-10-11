@@ -1,5 +1,5 @@
 {
   "ConnectionStrings": {
-    "GameWebsiteDb": "Server=(local); uid=sa; pwd=robot; database=GameWebsiteDb; TrustServerCertificate = true;"
+    "GameDb": "Server=(local); uid=sa; pwd=robot; database=GameDB; TrustServerCertificate = true;"
   }
 }

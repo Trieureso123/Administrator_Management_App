@@ -45,7 +45,7 @@ namespace Winform
             if (checkvalidation)
             {
                 string? cs = Program.ConnectionString;
-                using (var db = new GameWebsiteDbContext(cs))
+                using (var db = new GameDBContext(cs))
                 {
                     var AdminInformation = db.Accounts.Where(a => a.Username == username
                     && a.Password == password).FirstOrDefault();
