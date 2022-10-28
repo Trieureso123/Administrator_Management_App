@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ASlbahNqOxtlXzHnLSposCGdOw8C8q4mbleZh+mexf8fa3X2RuQ+zGkjoRsv9uUDYmDw3CO0YU0vTOcFExnUrQ==",
+  "dgSpecHash": "D0yU1/eMhx1wi/X5yJYD3FdYiae5pqBPSY+oIWxcizD8Tzi2aVzODTFQMEmi5GbfptrSxuhd2DnItt3fw1+wGg==",
   "success": true,
-  "projectFilePath": "D:\\OJT_Project\\Administrator_Management_App - Copy\\AdminManagementInformation\\Winform\\Winform.csproj",
+  "projectFilePath": "D:\\OJT_Project\\Administrator_Management_App\\AdminManagementInformation\\Winform\\Winform.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hai Trieu\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Hai Trieu\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
